@@ -4,7 +4,7 @@ Sistema de aluguel de bicicletas online
 # Equipe:
 - Allexandre Tannure
 - Bernardo Andrade
-- Marcos Willian Reis
+- Marcos William Reis
 - Victor Gabriel Figueiredo
 
 # Funcionalidades
