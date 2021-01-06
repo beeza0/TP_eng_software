@@ -15,3 +15,5 @@ O sistema será um aluguel online de bicicletas onde qualquer os visitantes pode
 - Back-end em Node.js 
 - Banco de dados MongoDB
 
+#Backlog do projeto: https://trello.com/invite/b/Ts9vJLKb/b2b4df0ca03dfa3fbf90e2153a332b2c/project-management
+
