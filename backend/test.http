@@ -1,0 +1,8 @@
+POST http://localhost:3001/app/signup
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "cpf": "90",
+    "password": "senha"
+}
