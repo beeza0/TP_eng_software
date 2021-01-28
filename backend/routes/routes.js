@@ -15,9 +15,9 @@ router.get('/login', (req, res) => {
 
 router.post('/signup', (req, res) => {
     const signup = new user({
-        userName:reqi.body.userName,
-        cpf:reqi.body.cpf,
-        password:reqi.body.password
+        userName:req.body.userName,
+        cpf:req.body.cpf,
+        password:req.body.password
     })
     signup.save()
     .then(data => {
@@ -38,7 +38,7 @@ router.get('/getAllUsers', (req, res) => {
     })
 })
 
-router.get('/getUserByCpf', (req, res) => {
+router.post('/getUserByCpf', (req, res) => {
     user.findOne({cpf: req.body.cpf})
     .then(user => {
         if(user) res.json(user)

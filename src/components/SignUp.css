@@ -43,8 +43,8 @@ html {
     margin: 5em auto;
     overflow: hidden;
     position: relative;
-    border: 1px solid #fefefe;
-    background: white;
+    /*border: 1px solid #fefefe;*/
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
   .overlay-v {
@@ -101,6 +101,7 @@ html {
   .header-v h4 {
     font-size: 48px;
     margin-bottom: 34px;
+    color: #00e736;
   }
   
   .header-v h4 span {
@@ -108,7 +109,7 @@ html {
   }
   
   .header-v p {
-    font-size: 18px;
+    font-size: 26px;
   }
 
   .header-v p span {
