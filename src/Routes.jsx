@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router'
 import SignIn from './components/SignIn.jsx'
 import SignUp from './components/SignUp.jsx'
 import Home from './components/Home.jsx'
+import navebar from './components/navebar.jsx'
 
 
 export default props => {
@@ -13,6 +14,7 @@ export default props => {
             <Route exact path='/' component={Home} /> 
             <Route path='/signup' component={SignUp} />
             <Route path='/signin' component={SignIn} />
+            <Route path='/nave' component={navebar} />
         </Switch>
     )
 }
