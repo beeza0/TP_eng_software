@@ -1,13 +1,14 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios'
 import './Bikes.css'
+import './bootstrap.css'
 import BikesCards from './BikesCards.jsx'
 
 
 const Bikes = props => {
 
     const [bikes, setBikes] = useState()
-    console.log(document.cookie.split(';').filter(item => item.includes('cpf'))[0].split('cpf=')[1])
+ //   console.log(document.cookie.split(';').filter(item => item.includes('cpf'))[0].split('cpf=')[1])
     useEffect(() => {
         axios.get('http://localhost:3001/getAllBikes')
             .then(res => {
@@ -26,10 +27,7 @@ const Bikes = props => {
     return (
         <div className="bikes-cards">
             {bikes && renderCards()}
-            {/* <BikesCards bikeData={x} ></BikesCards> 
-            <BikesCards bikeData={x} ></BikesCards>
-            <BikesCards bikeData={x} ></BikesCards>
-            <BikesCards bikeData={x} ></BikesCards> */}
+            {}
         </div>
   )
 }
