@@ -27,7 +27,7 @@ const BikesCards = props => {
             <div className="card-body">
                 <div className="">
                     <img src='https://static.netshoes.com.br/produtos/bicicleta-ksw-aro-29-freios-a-disco-21-marchas-cambios-shimano/18/CGY-0024-018/CGY-0024-018_zoom1.jpg?ts=1580294446'
-                    className="img-thumbnail	mb-3 d-none d-sm-block"></img>
+                    className="img-thumbnail mb-3 d-none d-sm-block"></img>
                 </div>
                 <dl>
                     <div className="info1">

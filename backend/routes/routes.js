@@ -82,6 +82,16 @@ router.get('/getAllBikes', (req, res) => { //get all bikes from database
     })
 })
 
+router.patch('/updateBike', (req, res) => { //get all bikes from database
+    bike.findOneAndUpdate({cpf: req.body.cpf}, {...req.body})
+    .then(_ => {
+        res.send("Success")
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
 
 /* --- Rents --- */
 
@@ -89,7 +99,8 @@ router.post('/createRent', (req, res) => { //create new rent in the database
     const newRent = new rent({
         id:req.body.id,
         cpf:req.body.cpf,
-        price:req.body.price
+        price:req.body.price,
+        imgUrl:req.body.imgUrl
     })
     newRent.save()
     .then(data => {
