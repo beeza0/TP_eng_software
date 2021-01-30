@@ -17,3 +17,5 @@ const rent = new mongoose.Schema({
         default: Date.now
     }
 })
+
+module.exports = mongoose.model('bikerent', rent)
