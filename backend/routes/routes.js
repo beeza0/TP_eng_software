@@ -12,14 +12,14 @@ router.get('/getAllUsers', (req, res) => {
     })
 })
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
     user.findOne({cpf: req.body.cpf})
     .then(user => {
         if(req.body.password == user.password) res.json(user)
         else res.json(300) // the password doesn`t match
     })
     .catch(_ => {
-        res.json(400) // cpf is not registered
+        res.json(400) // cpf is not registered (melhorar)
     })
 })
 

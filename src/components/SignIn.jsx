@@ -3,7 +3,24 @@ import axios from 'axios'
 import './SignIn.css'
 
 const SignIn = props => {
-    //const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState({})
+    const submitSignIn = () => {
+        axios.post('http://localhost:3001/login',userData)
+            .then(res =>{
+                if(res.data === 300){
+                    console.log("senha errada")
+                }
+                else if(res.data === 400){
+                    console.log("cpf não registrado")
+                }
+                else{
+                    console.log(res.data)
+                }
+            })
+            .catch(err =>{
+                console.log("cpf não registrado")
+            })
+    }
     return (
         <div>
             <div className= "container">
@@ -23,19 +40,21 @@ const SignIn = props => {
                             </div>
                             <div class="login">
                                 <h2 className="btn sign-in">SingIn</h2>
-                                <form action="#" method="post" className="fomr_signin">
+                                <div  className="fomr_signin">
                                     <div class="form-group">
-                                        <label for="email">Email:</label>
-                                        <input	type="email"	className="campos" idName="email"	name="email" placeholder="email@exemplo.com"></input>
+                                        <label for="cpf">CPF:</label>
+                                        <input	type="cpf"	className="campos" idName="cpf"	name="cpf" placeholder="000.000.000-00"
+                                        onChange={(s) => {setUserData({...userData , cpf : s.target.value})}} value={userData.cpf}></input>
                                     </div>
                                     <div class="form-group">
                                         <label for="senha">Senha:</label>
-                                        <input	type="password"	className="campos" idName="senha"	name="senha" placeholder="Digite sua senha"></input>
+                                        <input	type="password"	className="campos" idName="senha"	name="senha" placeholder="Digite sua senha"
+                                        onChange={(e) => {setUserData({...userData , password : e.target.value})}} value={userData.password}></input>
                                     </div>
                                     <div class="form-group">
-                                        <button	type="submit" className="btn sign-in button" idName="senha"	name="Entrar" >Entrar</button>
+                                        <button className="btn sign-in button" idName="senha"	name="Entrar" onClick={submitSignIn} >Entrar</button>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
