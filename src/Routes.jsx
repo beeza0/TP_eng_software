@@ -6,6 +6,7 @@ import SignUp from './components/SignUp.jsx'
 import Home from './components/Home.jsx'
 import Bikes from './components/Bikes.jsx'
 import Rents from './components/Rents.jsx'
+import navebar from './components/navebar.jsx'
 
 
 export default props => {
@@ -17,6 +18,7 @@ export default props => {
             <Route path='/signin' component={SignIn} />
             <Route path='/bikes' component={Bikes} />
             <Route path='/rents' component={Rents} />
+            <Route path='/nave' component={navebar} />
         </Switch>
     )
 }
