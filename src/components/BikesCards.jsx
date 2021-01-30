@@ -14,8 +14,8 @@ const BikesCards = props => {
             height: 'fit-content',
             padding: '1vw',
             borderRadius: '25px',
-            marginBottom: '35px',
-            backgroundColor: 'rgb(255, 255, 255)'
+            backgroundColor: 'rgb(255, 255, 255)',
+            marginTop: '50px'
         }
     }))
 

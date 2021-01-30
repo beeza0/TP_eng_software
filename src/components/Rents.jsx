@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios'
-// import './Rents.css'
+import './Rents.css'
+import Nav from './navebar.jsx'
 import RentsCards from './RentsCards.jsx'
 
 
@@ -27,9 +28,12 @@ const Rents = props => {
     
 
     return (
-        <div className="bikes-cards">
+    <Fragment>
+        <Nav/>
+        <div className="rents-cards">
             {rents && renderCards()}
         </div>
+    </Fragment>
   )
 }
 export default Rents

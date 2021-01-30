@@ -38,13 +38,13 @@ html {
   }
   
   .muck-up-v {
-    width: 506px;
-    height: 1200px;
+    width: 36%;
+    height: 930px;
+    right: 32%;
+    top: -6%;
     margin: 5em auto;
     overflow: hidden;
-    position: relative;
-    /*border: 1px solid #fefefe;*/
-    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;
   }
   
   .overlay-v {
@@ -62,7 +62,7 @@ html {
   }
   
   .logo-v {
-    margin-top: 123px;
+    margin-top: 50px;
     margin-left: 36%;
   }
   
@@ -118,7 +118,7 @@ html {
   
   .cadastro-v {
     padding: 0 10%;
-    margin-top: 134px;
+    margin-top: 50px;
     color: #fff;
     text-align: center;
   }

@@ -1,26 +1,29 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import './SignUp.css'
-
+import { useHistory } from 'react-router-dom'
 
 
 const SignUp = props => {
     const [userData, setUserData] = useState({})
     const [confirmPassword, setConfirmPassword] = useState()
     const [difPasswordAlert, setDifPasswordAlert] = useState(false);
-    const [cfpAlert, setCpfAlert] = useState(false);
+    const [cfpAlert, setCpfAlert] = useState(false)
+    const history = useHistory()
 
     const submitSignUp = async () => {
 
         const hasCpf = (await axios.post('http://localhost:3001/getUserByCpf', {cpf: userData.cpf})).data
-        console.log(hasCpf)
 
         if (userData.password === confirmPassword && hasCpf === null){
-            //console.log(userData)
             setDifPasswordAlert(false)
             axios.post('http://localhost:3001/signup', userData)
                 .then(res => {
-                    console.log(res)
+                    history.push({
+                        pathname: '/signin'
+                        // state: { payment: paymentOptions }
+                    })
+                    history.go()
                 })
         }
 
@@ -31,7 +34,6 @@ const SignUp = props => {
 
         else {
             setDifPasswordAlert(true)
-           // console.log(difPassword)
         }
     }
 
@@ -46,30 +48,33 @@ const SignUp = props => {
                 <div className="header-v">
                     
                     <h4><span>BRO</span></h4>
-                    <p><span>B</span>ike <span>R</span>ent <span>O</span>nline</p>
+                    <p>Sign Up to <span>B</span>ike <span>R</span>ent <span>O</span>nline</p>
                     
                 </div>
                 <div className="cadastro-v">
-                    <h1>Sign Up to <span>B</span>ike <span>R</span>ent <span>O</span>nline</h1>
-                    
-                    <p>Nome:</p>
-                    <input placeholder="Digite seu nome" onChange={(e) => {setUserData({...userData , userName : e.target.value})}} value={setUserData.userName}></input>
-                    <p>CPF:</p>
-                    <input placeholder="Digite seu CPF" onChange={(e) => {setUserData({...userData , cpf : e.target.value});
-                     setCpfAlert(false)}}
-                      value={setUserData.cpf}></input>
-                    {/*<p>E-mail:</p>
-                    <input placeholder="email@example.com" onChange={(e) => {setUserData({...userData , email : e.target.value})}} value={setUserData.email}></input>*/}
-                    <p>Senha:</p>
-                    <input placeholder="Digite sua senha" onChange={(e) => {setUserData({...userData , password : e.target.value})}} value={setUserData.password}></input>
-                    <p>Confirme sua senha:</p>
-                    <input placeholder="Digite sua senha" onChange={(e) => {setConfirmPassword(e.target.value);
-                    setDifPasswordAlert(false)}}
-                     value={confirmPassword}></input>
-
-
-                    <h2></h2>
-                    <button className="btn-v sign-up-v" onClick={submitSignUp}>Sign Up</button>
+                    <div class="form-group">
+                            <label for="text">Name:</label>
+                            <input	type="text"className="campos" placeholder="Type your name"
+                            onChange={(s) => {setUserData({...userData , userName : s.target.value})}} value={userData.userName}></input>
+                    </div>
+                    <div class="form-group">
+                            <label for="text">CPF:</label>
+                            <input	type="text"	className="campos" placeholder="Type your CPF"
+                            onChange={(s) => {setUserData({...userData , cpf : s.target.value}); setCpfAlert(false)}} value={userData.cpf}></input>
+                    </div>
+                    <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input	type="password"	className="campos" placeholder="password..."
+                            onChange={(s) => {setUserData({...userData , password : s.target.value}); setCpfAlert(false)}} value={userData.password}></input>
+                    </div>
+                    <div class="form-group">
+                            <label for="password">Confirm password:</label>
+                            <input	type="password"	className="campos" placeholder="password..."
+                            onChange={(s) => {setConfirmPassword(s.target.value); setDifPasswordAlert(false)}} value={confirmPassword}></input>
+                    </div>
+                    <div class="form-group">
+                            <button className="btn sign-in button" idName="senha"	name="Entrar" onClick={submitSignUp} >Sign Up</button>
+                    </div>
                     {difPasswordAlert && <div className="alert-v"> <h2>As senhas não conferem, tente outra vez</h2> </div>}
                     {cfpAlert && <div className="alert-v"> <h2>O CPF já está cadastrado</h2> </div>}
                 </div>
