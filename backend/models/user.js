@@ -19,4 +19,4 @@ const user = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('bikerent', user)
+module.exports = mongoose.model('users', user)

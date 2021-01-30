@@ -10,7 +10,10 @@ const bike = new mongoose.Schema({
     },
     price: {
         type: String,
+    },
+    imgUrl : {
+        type: String,
     }
 })
 
-module.exports = mongoose.model('bikerent', bike)
+module.exports = mongoose.model('bikes', bike)

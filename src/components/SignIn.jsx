@@ -1,11 +1,13 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import './SignIn.css'
+import { useHistory } from 'react-router-dom'
 
 const SignIn = props => {
+    const history = useHistory()
     const [userData, setUserData] = useState({})
     const submitSignIn = () => {
-        axios.post('http://localhost:3001/login',userData)
+        axios.post('http://localhost:3001/login', userData)
             .then(res =>{
                 if(res.data === 300){
                     console.log("senha errada")
@@ -14,7 +16,13 @@ const SignIn = props => {
                     console.log("cpf não registrado")
                 }
                 else{
-                    console.log(res.data)
+                    document.cookie = `cpf=${res.data.cpf};`
+                    history.push({
+                        pathname: '/bikes'
+                        // state: { payment: paymentOptions }
+                    })
+                    history.go()
+                    
                 }
             })
             .catch(err =>{

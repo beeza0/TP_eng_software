@@ -1,0 +1,8 @@
+.bikes-cards {
+    height: 800px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
