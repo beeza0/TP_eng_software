@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 
 const rent = new mongoose.Schema({
-    idBike: {
+    id: {
         type: Number,
         required: true
     },
-    cpfUser: {
+    cpf: {
         type: Number,
         required: true
+    },
+    price: {
+        type: Number,
     },
     date: {
         type: Date,
