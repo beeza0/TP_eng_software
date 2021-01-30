@@ -25,13 +25,34 @@ router.post('/login', (req, res) => {
 
 router.post('/signup', (req, res) => {
     const signup = new user({
-        userName:reqi.body.userName,
-        cpf:reqi.body.cpf,
-        password:reqi.body.password
+        userName:req.body.userName,
+        cpf:req.body.cpf,
+        password:req.body.password
     })
     signup.save()
     .then(data => {
         res.json(data)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
+router.get('/getAllUsers', (req, res) => {
+    user.find({})
+    .then(users => {
+        res.json(users)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
+router.post('/getUserByCpf', (req, res) => {
+    user.findOne({cpf: req.body.cpf})
+    .then(user => {
+        if(user) res.json(user)
+        else res.json(null)
     })
     .catch(err => {
         res.json(err)

@@ -37,17 +37,17 @@ html {
     display: block
   }
   
-  .muck-up {
+  .muck-up-v {
     width: 506px;
     height: 1200px;
     margin: 5em auto;
     overflow: hidden;
     position: relative;
-    border: 1px solid #fefefe;
-    background: white;
+    /*border: 1px solid #fefefe;*/
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
-  .overlay {
+  .overlay-v {
     left: 0;
     right: 0;
     top: 0;
@@ -56,17 +56,17 @@ html {
     background: rgba(0, 0, 0, 0.6);
   }
   
-  .content {
+  .content-v {
     position: relative;
     z-index: 10;
   }
   
-  .logo {
+  .logo-v {
     margin-top: 123px;
     margin-left: 36%;
   }
   
-  .logo a {
+  .logo-v a {
     height: 140px;
     width: 140px;
     display: block;
@@ -82,68 +82,69 @@ html {
     left: 36%;
   }
   
-  .logo span {
+  .logo-v span {
     transform: rotate(-45deg);
     display: inline-block;
   }
   
-  .header {
+  .header-v {
     text-align: center;
     color: #fff;
   }
   
-  .header hr {
+  .header-v hr {
     max-width: 59px;
     border: 1px solid #00E777;
     margin: 54px 0px 34px 226px;
   }
   
-  .header h4 {
+  .header-v h4 {
     font-size: 48px;
     margin-bottom: 34px;
+    color: #00e736;
   }
   
-  .header h4 span {
+  .header-v h4 span {
     color: #00e777;
   }
   
-  .header p {
-    font-size: 18px;
+  .header-v p {
+    font-size: 26px;
   }
 
-  .header p span {
+  .header-v p span {
     color: #00e777;
   }
   
-  .cadastro {
+  .cadastro-v {
     padding: 0 10%;
     margin-top: 134px;
     color: #fff;
     text-align: center;
   }
 
-  .cadastro p {
+  .cadastro-v p {
     font-size: 18px;
   }
 
-  .cadastro p span {
+  .cadastro-v p span {
     color: #00e777;
   }
 
-  .cadastro h1 {
+  .cadastro-v h1 {
     font-size: 22px;
   }
 
-  .cadastro h1 span {
+  .cadastro-v h1 span {
     color: #00e777;
   }
   
-  .btn {
+  .btn-v {
     cursor: pointer;
-    display: block;
+    /*display: block;*/
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 400px;
     padding: 18px 12px;
     border-radius: 4px;
     text-align: center;
@@ -156,7 +157,7 @@ html {
   
   
   
-  .sign-up {
+  .sign-up-v {
     color: #fff;
     font-size: 18px;
     background: #00E777;
@@ -164,5 +165,23 @@ html {
     margin-bottom: 20px;
     border-color: #0BDA76;
     text-align: center;
+  }
+
+  .alert-v {
+    box-sizing: border-box;
+    background-color: #BDFFE1;
+    width: 100%;
+    position: relative; 
+    top: 0;
+    left: 0;
+    z-index: 300;
+    padding: 20px 40px;
+    color: #333;
+  }
+  
+  .alert-v h2 {
+    font-size: 22px;
+    color: #232323;
+    margin-top: 0;
   }
 
