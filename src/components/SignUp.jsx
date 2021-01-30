@@ -10,13 +10,14 @@ const SignUp = props => {
     const [difPasswordAlert, setDifPasswordAlert] = useState(false);
     const [cfpAlert, setCpfAlert] = useState(false);
 
-    const submitSignUp = () => {
+    const submitSignUp = async () => {
 
-        //const hasCpf = FUNCAO
+        const hasCpf = (await axios.post('http://localhost:3001/getUserByCpf', {cpf: userData.cpf})).data
+        console.log(hasCpf)
 
-        if (userData.password === confirmPassword){ //&& hasCpf === null){
+        if (userData.password === confirmPassword && hasCpf === null){
             //console.log(userData)
-            {setDifPasswordAlert(false)}
+            setDifPasswordAlert(false)
             axios.post('http://localhost:3001/signup', userData)
                 .then(res => {
                     console.log(res)
@@ -24,12 +25,12 @@ const SignUp = props => {
         }
 
         
-        //else if (hasCpf != null) {
-         //   {setCpfAlert(true)}
-        //}
+        else if (hasCpf != null) {
+            setCpfAlert(true)
+        }
 
         else {
-            {setDifPasswordAlert(true)}
+            setDifPasswordAlert(true)
            // console.log(difPassword)
         }
     }
@@ -54,13 +55,17 @@ const SignUp = props => {
                     <p>Nome:</p>
                     <input placeholder="Digite seu nome" onChange={(e) => {setUserData({...userData , userName : e.target.value})}} value={setUserData.userName}></input>
                     <p>CPF:</p>
-                    <input placeholder="Digite seu CPF" onChange={(e) => {setUserData({...userData , cpf : e.target.value})}, () => {setCpfAlert(false)}} value={setUserData.cpf}></input>
+                    <input placeholder="Digite seu CPF" onChange={(e) => {setUserData({...userData , cpf : e.target.value});
+                     setCpfAlert(false)}}
+                      value={setUserData.cpf}></input>
                     {/*<p>E-mail:</p>
                     <input placeholder="email@example.com" onChange={(e) => {setUserData({...userData , email : e.target.value})}} value={setUserData.email}></input>*/}
                     <p>Senha:</p>
                     <input placeholder="Digite sua senha" onChange={(e) => {setUserData({...userData , password : e.target.value})}} value={setUserData.password}></input>
                     <p>Confirme sua senha:</p>
-                    <input placeholder="Digite sua senha" onChange={(e) => {setConfirmPassword(e.target.value)}, () => {setDifPasswordAlert(false)}} value={confirmPassword}></input>
+                    <input placeholder="Digite sua senha" onChange={(e) => {setConfirmPassword(e.target.value);
+                    setDifPasswordAlert(false)}}
+                     value={confirmPassword}></input>
 
 
                     <h2></h2>
