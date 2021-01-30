@@ -1,17 +1,12 @@
-import React, { useState, useContext } from 'react'
-import axios from 'axios'
+import React from 'react'
 import './navebar.css'
 import './bootstrap.css'
 
-//import bike_logo from '../assets/bike_logo.png'
-
-
-function Home(props) {
-    const [userData, setUserData] = useState({})
+function Nav(props) {
 
     return (<>
 
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top coloor">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top coloor" style={{height: '100px', position: 'fixed', width: '100%'}}>
             <div className="container-fluid">
                 <a className="navebar-brand">
                     <h3 id="name">Bike Rent Online</h3>
@@ -21,17 +16,17 @@ function Home(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Bike</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/bikes" id="nav-link-style">Bikes</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About Us</a>
+                            <a className="nav-link" href="/rents" id="nav-link-style">Rents</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contact</a>
+                            <a className="nav-link" href="#" id="nav-link-style">About us</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Rent</a>
+                            <a className="nav-link" href="#" id="nav-link-style">ADM</a>
                         </li>
                     </ul>
                 </div>
@@ -44,4 +39,4 @@ function Home(props) {
 
 }
 
-export default Home
+export default Nav
