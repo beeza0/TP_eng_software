@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios'
 import './Bikes.css'
+import './bootstrap.css'
 import BikesCards from './BikesCards.jsx'
 import Nav from './navebar.jsx'
 

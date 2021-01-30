@@ -1,0 +1,33 @@
+
+.bike-card img{
+    height: 300px;
+    margin: 0px auto;
+    border: none;
+}
+.bike-card dt{
+    color:rgb(0, 231, 119);
+    font-size: 115%;
+}
+.bike-card .info1{
+    float: left;
+}
+.bike-card .info2{
+    float: right;
+}
+.bike-card{
+    font: 300 18px/21px Roboto;
+}
+.button{
+    clear: both;
+    display: flex;
+    
+}
+.button button{
+    margin: 0px auto;
+    align-self: center;
+    width: 100px;
+    font-size: 120%;
+}
+.card{
+    border: none;
+}
