@@ -1,13 +1,4 @@
 
-
-html {
-    background: url(https://4.bp.blogspot.com/-cCTtUWbUjbo/VbHxXn1-qzI/AAAAAAAAGBo/Jt9LdGLOu9c/s1600/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
   a,
   a:hover,
   a:active,
@@ -38,14 +29,14 @@ html {
   }
   
   .muck-up-v {
-    width: 36%;
-    height: 930px;
-    right: 32%;
+    width: 50%;
+    height: auto;
+    right: 25%;
     top: -6%;
     margin: 5em auto;
-    overflow: hidden;
     position: fixed;
-  }
+    padding-bottom: 60px;
+}
   
   .overlay-v {
     left: 0;
@@ -62,9 +53,11 @@ html {
   }
   
   .logo-v {
-    margin-top: 50px;
-    margin-left: 36%;
-  }
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+}
   
   .logo-v a {
     height: 140px;
@@ -90,17 +83,19 @@ html {
   .header-v {
     text-align: center;
     color: #fff;
-  }
+    display: flex;
+    flex-direction: column;
+}
   
   .header-v hr {
     max-width: 59px;
     border: 1px solid #00E777;
-    margin: 54px 0px 34px 226px;
+    /* margin: 54px 0px 34px 226px; */
   }
   
   .header-v h4 {
     font-size: 48px;
-    margin-bottom: 34px;
+    /* margin-bottom: 34px; */
     color: #00e736;
   }
   
@@ -117,11 +112,11 @@ html {
   }
   
   .cadastro-v {
-    padding: 0 10%;
-    margin-top: 50px;
     color: #fff;
     text-align: center;
-  }
+    display: flex;
+    flex-direction: column;
+}
 
   .cadastro-v p {
     font-size: 18px;
@@ -154,8 +149,23 @@ html {
     line-height: 1.42857143;
     border: 1px solid transparent;
   }
+
+  .button-v {
+    width: 170px;
+    justify-content: center;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    background-color: rgb(0, 231, 119);
+    color: white;
+    cursor: pointer;
+}
+
+.button-v:hover{
   
-  
+  background-color: white;
+  color: rgb(0, 231, 119);
+}
   
   .sign-up-v {
     color: #fff;
@@ -169,19 +179,29 @@ html {
 
   .alert-v {
     box-sizing: border-box;
-    background-color: #BDFFE1;
     width: 100%;
-    position: relative; 
-    top: 0;
-    left: 0;
     z-index: 300;
-    padding: 20px 40px;
-    color: #333;
-  }
+    color: red;
+    margin-bottom: -32px;
+}
   
   .alert-v h2 {
-    font-size: 22px;
-    color: #232323;
+    font-size: 20px;
     margin-top: 0;
   }
 
+  .form-group-v {
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.two-inputs {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 0 50px 0 50px;
+}
+
+
+ 

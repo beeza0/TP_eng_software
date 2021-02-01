@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './SignUp.css'
 import { useHistory } from 'react-router-dom'
@@ -52,31 +52,35 @@ const SignUp = props => {
                     
                 </div>
                 <div className="cadastro-v">
-                    <div class="form-group">
+                    <div className="two-inputs">
+                    <div class="form-group-v">
                             <label for="text">Name:</label>
                             <input	type="text"className="campos" placeholder="Type your name"
-                            onChange={(s) => {setUserData({...userData , userName : s.target.value})}} value={userData.userName}></input>
+                            onChange={(s) => {setUserData({...userData , userName : s.target.value})}} value={userData.userName} style={{textAlign: 'left'}}></input>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group-v">
                             <label for="text">CPF:</label>
                             <input	type="text"	className="campos" placeholder="Type your CPF"
-                            onChange={(s) => {setUserData({...userData , cpf : s.target.value}); setCpfAlert(false)}} value={userData.cpf}></input>
+                            onChange={(s) => {setUserData({...userData , cpf : s.target.value}); setCpfAlert(false)}} value={userData.cpf} style={{textAlign: 'left'}}></input>
                     </div>
-                    <div class="form-group">
+                    </div>
+                    <div className="two-inputs">
+                    <div class="form-group-v">
                             <label for="password">Password:</label>
                             <input	type="password"	className="campos" placeholder="password..."
-                            onChange={(s) => {setUserData({...userData , password : s.target.value}); setCpfAlert(false)}} value={userData.password}></input>
+                            onChange={(s) => {setUserData({...userData , password : s.target.value}); setCpfAlert(false)}} value={userData.password} style={{textAlign: 'left'}}></input>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group-v">
                             <label for="password">Confirm password:</label>
                             <input	type="password"	className="campos" placeholder="password..."
-                            onChange={(s) => {setConfirmPassword(s.target.value); setDifPasswordAlert(false)}} value={confirmPassword}></input>
+                            onChange={(s) => {setConfirmPassword(s.target.value); setDifPasswordAlert(false)}} value={confirmPassword} style={{textAlign: 'left'}}></input>
                     </div>
-                    <div class="form-group">
-                            <button className="btn sign-in button" idName="senha"	name="Entrar" onClick={submitSignUp} >Sign Up</button>
                     </div>
-                    {difPasswordAlert && <div className="alert-v"> <h2>As senhas não conferem, tente outra vez</h2> </div>}
-                    {cfpAlert && <div className="alert-v"> <h2>O CPF já está cadastrado</h2> </div>}
+                    <div class="form-group-v">
+                            <button className="button-v" idName="senha"	name="Entrar" onClick={submitSignUp} >SIGN UP</button>
+                    </div>
+                    {difPasswordAlert && <div className="alert-v"> <h2>The passwords doesn't match!</h2> </div>}
+                    {cfpAlert && <div className="alert-v"> <h2>CPF already registered!</h2> </div>}
                 </div>
                 </div>
             </div>

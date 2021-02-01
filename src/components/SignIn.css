@@ -3,15 +3,7 @@
     width: 1100px;
     text-align: center;
     background: url(./img/backgroud.jpg);
-  }
-  html {
-    background: url(https://4.bp.blogspot.com/-cCTtUWbUjbo/VbHxXn1-qzI/AAAAAAAAGBo/Jt9LdGLOu9c/s1600/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
+  }  
   a,
   a:hover,
   a:active,
