@@ -3,15 +3,16 @@ import axios from 'axios'
 import './Bikes.css'
 import './bootstrap.css'
 import BikesCards from './BikesCards.jsx'
+import NewBikeCard from './NewBikeCard.jsx'
 import Nav from './navebar.jsx'
 
 
 const Bikes = props => {
     const [bikes, setBikes] = useState()
+    const isAdmin = (document.cookie.split(';').filter(item => item.includes('cpf'))[0].split('cpf=')[1] == 0) ? true : false
     const userCpf = document.cookie.split(';').filter(item => item.includes('cpf'))[0].split('cpf=')[1]
     const [showPopUp, setShowPopUp] = useState(false)
     const [rents, setRents] =useState()
-    const [x, setX] = useState(false)
 
     useEffect(() => {
         axios.get('http://localhost:3001/getAllBikes')
@@ -25,24 +26,27 @@ const Bikes = props => {
                 aux.push(rent.id)
                 if(aux.length == res.data.length){
                     setRents(aux)
-                    setX(!x)
-                    console.log("passei aqui",aux);
                 }
             })
         })
-    }, [])
+    }, [showPopUp])
 
     
-    const newRent = () => {
-        //Mudar database
-        setShowPopUp(true);
+    const newRent = (bike) => {
+        axios.post('http://localhost:3001/createRent', {
+            cpf: userCpf,
+            id: bike.id,
+            price: bike.price,
+            imgUrl: bike.imgUrl
+        })
+        .then(_ => {setShowPopUp(true)})
     }
 
 
     const renderCards = () => 
         bikes.map(bike => {
             return (
-                <BikesCards bikeData={bike} newRent = {newRent} rents = {rents} x ={x}/>
+                <BikesCards bikeData={bike} newRent={newRent} rents={rents} isAdmin={isAdmin}/>
             )
         })
     
@@ -53,13 +57,14 @@ const Bikes = props => {
             {showPopUp && <div className = "pop-up-container">
                 <div className = "pop-up">
                     <div className = "pop-up-text">
-                        <label>Your bike has been rented!</label>
+                        <label>Bike rented!</label>
                         <i className = "fas fa check"></i>
                     </div>
                     <button onClick = {() => setShowPopUp(false)}>X</button>
                 </div>
             </div>}
             <div className="bikes-cards">
+                {isAdmin && <NewBikeCard/>}
                 {bikes && renderCards()}
             </div>
         </Fragment>

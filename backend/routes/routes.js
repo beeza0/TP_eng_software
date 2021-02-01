@@ -60,7 +60,7 @@ router.post('/getUserByCpf', (req, res) => { //get user by its cpf
 router.post('/createBike', (req, res) => { //create new bike in the database
     const newBike = new bike({
         id:req.body.id,
-        color:req.body.color,
+        imgUrl:req.body.imgUrl,
         price:req.body.price
     })
     newBike.save()
@@ -82,8 +82,29 @@ router.get('/getAllBikes', (req, res) => { //get all bikes from database
     })
 })
 
+router.post('/getBikeById', (req, res) => { //get bike by its id
+    bike.findOne({id: req.body.id})
+    .then(bike => {
+        if(bike) res.json(bike)
+        else res.json(null)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
 router.patch('/updateBike', (req, res) => { //get all bikes from database
     bike.findOneAndUpdate({cpf: req.body.cpf}, {...req.body})
+    .then(_ => {
+        res.send("Success")
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
+router.delete('/deleteBike/:id', (req, res) => { //delete bike from database
+    bike.findOneAndDelete({id: req.params.id})
     .then(_ => {
         res.send("Success")
     })
@@ -102,6 +123,7 @@ router.post('/createRent', (req, res) => { //create new rent in the database
         price:req.body.price,
         imgUrl:req.body.imgUrl
     })
+
     newRent.save()
     .then(data => {
         res.json(data)

@@ -19,7 +19,7 @@
 .pop-up{
     height: fit-content;
     position: fixed;
-    height: auto;
+    height: 180px;
     width: 500px;
     top: 50%;
     right: 50%;
@@ -28,23 +28,25 @@
     opacity: 1;
     transform: translate(50%, -50%);
     border-radius: 25px;
+    align-items: center;
+    padding-top: 80px;
 }
 
 .pop-up-text{
-    margin: 4cm 2cm;
     text-align: center;
     
 }
 
 .pop-up-text label{
     font: 300 25px/21px Roboto;
-    color: rgb(0, 231, 119);
+    color:rgba(0, 0, 0, 1);
+    font-size: 50px;
 }
 
 .pop-up button{
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: -10px;
+    top: -10px;
     border-radius: 25px;
     width: 50px;
     height: 50px;

@@ -1,0 +1,10 @@
+.about{
+    background-color: white;
+    padding: 1cm 2cm;
+}
+.txt_center{
+    text-align: center;
+}
+.about h3{
+    font-size: 200%;
+}

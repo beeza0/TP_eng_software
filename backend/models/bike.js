@@ -5,9 +5,6 @@ const bike = new mongoose.Schema({
         type: Number,
         required: true
     },
-    color: {
-        type: String,
-    },
     price: {
         type: String,
     },

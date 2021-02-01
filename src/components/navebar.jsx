@@ -1,11 +1,25 @@
 import React from 'react'
 import './navebar.css'
 import './bootstrap.css'
+import { useHistory } from 'react-router-dom'
+
 
 function Nav(props) {
 
-    return (<>
+    const history = useHistory()
+    const isAdmin = (document.cookie.split(';').filter(item => item.includes('cpf'))[0].split('cpf=')[1] == 0) ? true : false
 
+    const logout = () => {
+        document.cookie = 'cpf=null'
+        history.push({
+            pathname: '/signin'
+            // state: { payment: paymentOptions }
+        })
+        history.go()
+    }
+
+    return (
+    <>
         <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top coloor" style={{height: '100px', position: 'fixed', width: '100%'}}>
             <div className="container-fluid">
                 <a className="navebar-brand">
@@ -22,11 +36,15 @@ function Nav(props) {
                         <li className="nav-item">
                             <a className="nav-link" href="/rents" id="nav-link-style">Rents</a>
                         </li>
+                        {/* <li className="nav-item">
+                            {isAdmin ? 
+                            <a className="nav-link" href="/about" id="nav-link-style">Users</a>
+                            : 
+                            <a className="nav-link" href="/about" id="nav-link-style">About us</a>
+                            }
+                        </li> */}
                         <li className="nav-item">
-                            <a className="nav-link" href="#" id="nav-link-style">About us</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#" id="nav-link-style">ADM</a>
+                            <a className="nav-link" onClick={logout} id="nav-link-style">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -35,7 +53,8 @@ function Nav(props) {
 
         
 
-    </>)
+    </>
+    )
 
 }
 

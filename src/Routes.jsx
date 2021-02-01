@@ -1,14 +1,15 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router'
+import { Switch, Route } from 'react-router'
 
 import SignIn from './components/SignIn.jsx'
 import SignUp from './components/SignUp.jsx'
 import Home from './components/Home.jsx'
 import Bikes from './components/Bikes.jsx'
 import Rents from './components/Rents.jsx'
+import About from './components/About.jsx'
 
 
-export default props => {
+export default () => {
 
     return (
         <Switch>
@@ -17,6 +18,7 @@ export default props => {
             <Route path='/signin' component={SignIn} />
             <Route path='/bikes' component={Bikes} />
             <Route path='/rents' component={Rents} />
+            <Route path='/about' component={About} />
         </Switch>
     )
 }

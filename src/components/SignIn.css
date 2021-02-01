@@ -35,10 +35,9 @@
 
   .muck-up {
     width: 36%;
-    height: 930px;
+    height: auto;
     right: 32%;
-    top: -6%;
-    margin: 5em auto;
+    margin: 1em auto;
     overflow: hidden;
     position: fixed;
 }
@@ -55,11 +54,15 @@
   .content {
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .logo {
-    margin-top: 123px;
-    margin-left: 36%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
   }
   
   .logo a {
@@ -84,8 +87,11 @@
   }
   
   .header {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     color: #fff;
+    justify-content: center;
   }
   
   .header hr {
@@ -109,7 +115,7 @@
   
   .login {
     padding: 0 10%;
-    margin-top: 50px;
+    margin-top: 22px;
   }
   
   .btn {
@@ -140,7 +146,6 @@
   /*Formulário de entrada*/
   .form-group{
         margin: 0 auto;
-        width:60%;
         text-align: left;
   }
   .campos{
