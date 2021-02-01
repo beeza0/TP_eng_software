@@ -36,13 +36,11 @@ function Nav(props) {
                         <li className="nav-item">
                             <a className="nav-link" href="/rents" id="nav-link-style">Rents</a>
                         </li>
-                        {/* <li className="nav-item">
-                            {isAdmin ? 
-                            <a className="nav-link" href="/about" id="nav-link-style">Users</a>
-                            : 
-                            <a className="nav-link" href="/about" id="nav-link-style">About us</a>
+                        <li className="nav-item">
+                            {isAdmin &&
+                            <a className="nav-link" href="/users" id="nav-link-style">Users</a>
                             }
-                        </li> */}
+                        </li>
                         <li className="nav-item">
                             <a className="nav-link" onClick={logout} id="nav-link-style">Logout</a>
                         </li>

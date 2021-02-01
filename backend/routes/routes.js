@@ -153,6 +153,16 @@ router.get('/getAllRents', (req, res) => { //get all rents by from database
     })
 })
 
+router.delete('/deleteRent/:id/:cpf', (req, res) => { //delete rent from database
+    rent.findOneAndDelete({id: req.params.id, cpf: req.params.cpf})
+    .then(_ => {
+        res.send("Success")
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
 
 
 module.exports = router

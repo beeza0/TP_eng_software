@@ -6,7 +6,7 @@ import SignUp from './components/SignUp.jsx'
 import Home from './components/Home.jsx'
 import Bikes from './components/Bikes.jsx'
 import Rents from './components/Rents.jsx'
-import About from './components/About.jsx'
+import Users from './components/Users.jsx'
 
 
 export default () => {
@@ -18,7 +18,7 @@ export default () => {
             <Route path='/signin' component={SignIn} />
             <Route path='/bikes' component={Bikes} />
             <Route path='/rents' component={Rents} />
-            <Route path='/about' component={About} />
+            <Route path='/users' component={Users} />
         </Switch>
     )
 }
