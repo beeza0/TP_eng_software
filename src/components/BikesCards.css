@@ -10,9 +10,12 @@
 }
 .bike-card .info1{
     float: left;
+    margin-left: 70px;
 }
 .bike-card .info2{
     float: right;
+    margin-right: 70px;
+    text-align: right;
 }
 .bike-card{
     font: 300 18px/21px Roboto;
@@ -27,6 +30,13 @@
     align-self: center;
     width: 100px;
     font-size: 120%;
+}
+.button div{
+    margin: 0px auto;
+    align-self: center;
+    width: 100px;
+    font-size: 120%;
+    background-color: red;
 }
 .card{
     border: none;
