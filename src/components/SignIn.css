@@ -3,14 +3,6 @@
   display: grid;
   color: #fff;
 }
-.sign-in {
-  color: #fff;
-  font-size: 18px;
-  background: #586A74;
-  text-transform: uppercase;
-  margin-bottom: 60px;
-  border-color: #4B5961;
-}
 .sign-in-m{
   color: #fff;
   font-size: 18px;
