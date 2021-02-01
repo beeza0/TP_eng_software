@@ -44,7 +44,7 @@ const SignIn = props => {
             <div class="overlay"></div>
             <div class="content">
                 <div class="logo">
-                    <a href="#" alt="Home" ><span class="fa fa-map-marker"></span></a> {/*Referência para home*/}
+                    <a href="/" alt="Home" ><span class="fa fa-map-marker"></span></a> {/*Referência para home*/}
                 </div>
                 <div class="header">
                     {/*<p className="home"><span>Home</span></p>*/}

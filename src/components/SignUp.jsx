@@ -43,7 +43,7 @@ const SignUp = props => {
                 <div className="overlay-v"></div>
                 <div className="content-v">
                     <div className="logo-v">
-                    <a href="#"><span class="fa fa-map-marker"></span></a>
+                    <a href="/"><span class="fa fa-map-marker"></span></a>
                     </div>
                 <div className="header-v">
                     
